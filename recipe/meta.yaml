@@ -14,9 +14,9 @@ source:
   sha256: d449e19998e90ba2d850bd16224c76ff5b67e665e1de4459e080cd7c3ef04226
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 0
-  skip: true  # [win32]
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
@@ -59,8 +59,7 @@ about:
     can be used within R markdown documents when rendering to HTML and to 'Microsoft
     Word' documents.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
