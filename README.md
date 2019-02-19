@@ -11,7 +11,7 @@ Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Create pretty tables for 'Microsoft Word', 'Microsoft PowerPoint' and 'HTML' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents when rendering to HTML and to 'Microsoft Word' documents.
+Summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
 
 
 
@@ -113,10 +113,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
-* [@cbrueffer](https://github.com/cbrueffer/)
-* [@daler](https://github.com/daler/)
-* [@dbast](https://github.com/dbast/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 
