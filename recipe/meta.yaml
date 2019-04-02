@@ -1,4 +1,4 @@
-{% set version = "0.5.2" %}
+{% set version = '0.5.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: flextable_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
   sha256: 47ac36ab5b932192ae1f3fd6dba5fe2b6a7eaf62c87c7bb20db174dae66e4b69
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -26,23 +25,25 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-r6
+    - r-base64enc
+    - r-data.table
     - r-gdtools >=0.1.6
     - r-htmltools
     - r-knitr
     - r-officer >=0.2.0
+    - r-rlang
     - r-rmarkdown
-    - r-stringr
     - r-xml2
   run:
     - r-base
-    - r-r6
+    - r-base64enc
+    - r-data.table
     - r-gdtools >=0.1.6
     - r-htmltools
     - r-knitr
     - r-officer >=0.2.0
+    - r-rlang
     - r-rmarkdown
-    - r-stringr
     - r-xml2
 
 test:
@@ -53,19 +54,35 @@ test:
 about:
   home: https://davidgohel.github.io/flextable
   license: GPL-3
-  summary: Create pretty tables for 'Microsoft Word', 'Microsoft PowerPoint' and 'HTML' documents.  Functions
+  summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions
     are provided to let users create tables, modify and format their content.  It extends
     package 'officer' that does not contain any feature for customized tabular reporting  and
-    can be used within R markdown documents when rendering to HTML and to 'Microsoft
-    Word' documents.
+    can be used within R markdown documents.
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: flextable
+# Type: Package
+# Title: Functions for Tabular Reporting
+# Version: 0.5.2
+# Authors@R: c( person("David", "Gohel", role = c("aut", "cre"), email = "david.gohel@ardata.fr"), person("Quentin", "Fazilleau", role = c("ctb"), email = "quentin.fazilleau@ardata.fr"), person("Maxim", "Nazarov", role = c("ctb"), comment = "rmarkdown for docx output"), person(given = "Titouan", family = "Robert", role = c("ctb")) )
+# Description: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
+# License: GPL-3
+# LazyData: TRUE
+# Imports: stats, utils, grDevices, officer (>= 0.2.0), rmarkdown, knitr, htmltools, xml2, data.table, gdtools (>= 0.1.6), rlang, base64enc
+# RoxygenNote: 6.1.1
+# Suggests: testthat, xtable, magrittr
+# Encoding: UTF-8
+# URL: https://davidgohel.github.io/flextable
+# BugReports: https://github.com/davidgohel/flextable/issues
+# VignetteBuilder: knitr
+# NeedsCompilation: no
+# Packaged: 2019-04-02 16:34:21 UTC; davidgohel
+# Author: David Gohel [aut, cre], Quentin Fazilleau [ctb], Maxim Nazarov [ctb] (rmarkdown for docx output), Titouan Robert [ctb]
+# Maintainer: David Gohel <david.gohel@ardata.fr>
+# Repository: CRAN
+# Date/Publication: 2019-04-02 17:40:09 UTC
