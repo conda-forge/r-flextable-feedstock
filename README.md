@@ -7,7 +7,7 @@ Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Create pretty tables for 'Microsoft Word', 'Microsoft PowerPoint' and 'HTML' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents when rendering to HTML and to 'Microsoft Word' documents.
+Summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
 
 
 
@@ -16,9 +16,12 @@ Current build status
 
 
 <table><tr>
+    
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1141&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-flextable-feedstock?branchName=master">
+      </a>
     </td>
   </tr>
 </table>
@@ -115,10 +118,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
-* [@cbrueffer](https://github.com/cbrueffer/)
-* [@daler](https://github.com/daler/)
-* [@dbast](https://github.com/dbast/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 
