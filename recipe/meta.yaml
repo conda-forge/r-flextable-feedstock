@@ -1,4 +1,4 @@
-{% set version = "0.5.10" %}
+{% set version = "0.5.11" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
-  sha256: 687912c6a03993df24a508af94a475c6b4652ef8de9ac9b80f22abada2dcfec8
+  sha256: 44bee804519cd306b34a6191b81dd08f2d5623a8d86d818f923ee5ffa33868f9
 
 build:
   merge_build_host: true  # [win]
@@ -53,10 +53,11 @@ test:
 
 about:
   home: https://davidgohel.github.io/flextable
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
