@@ -5,11 +5,9 @@ Home: https://davidgohel.github.io/flextable
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-flextable-feedstock/blob/master/LICENSE.txt)
 
 Summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
-
-
 
 Current build status
 ====================
