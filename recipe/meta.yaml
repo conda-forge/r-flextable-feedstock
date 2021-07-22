@@ -23,27 +23,30 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-base64enc
-    - r-data.table
+    - r-data.table >=1.13.0
     - r-gdtools >=0.1.6
     - r-htmltools
     - r-knitr
-    - r-officer >=0.2.0
+    - r-officer >=0.3.19
     - r-rlang
     - r-rmarkdown
+    - r-uuid >=0.1_4
     - r-xml2
   run:
     - r-base
     - r-base64enc
-    - r-data.table
+    - r-data.table >=1.13.0
     - r-gdtools >=0.1.6
     - r-htmltools
     - r-knitr
-    - r-officer >=0.2.0
+    - r-officer >=0.3.19
     - r-rlang
     - r-rmarkdown
+    - r-uuid >=0.1_4
     - r-xml2
 
 test:
