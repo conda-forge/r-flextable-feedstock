@@ -1,4 +1,4 @@
-{% set version = "0.6.10" %}
+{% set version = "0.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
-  sha256: 82623ae4b985e9f69101def7bd5f063614398cae092f7af36be48375ca00d506
+  sha256: 75e5d54078651e52ba507af959ba2665b9a0d39f01ecadabaf229c83162d7997
 
 build:
   merge_build_host: true  # [win]
