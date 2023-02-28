@@ -1,4 +1,4 @@
-{% set version = "0.8.5" %}
+{% set version = "0.8.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
-  sha256: b6a59a4a7a1ad40d6cb22289bf17a205a023bde8a9e95423c63d12f032519db0
+  sha256: 1872f4a27a0cf7b2bf04a2228ec6bbcfac50af4c3616d653b8b6c68df91d2836
 
 build:
   merge_build_host: true  # [win]
@@ -26,24 +26,24 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-base64enc
     - r-data.table >=1.13.0
-    - r-gdtools >=0.1.6
+    - r-gdtools >=0.3.1
     - r-htmltools
     - r-knitr
-    - r-officer >=0.3.19
+    - r-officer >=0.6.0
+    - r-ragg
     - r-rlang
     - r-rmarkdown
     - r-uuid >=0.1_4
     - r-xml2
   run:
     - r-base
-    - r-base64enc
     - r-data.table >=1.13.0
-    - r-gdtools >=0.1.6
+    - r-gdtools >=0.3.1
     - r-htmltools
     - r-knitr
-    - r-officer >=0.3.19
+    - r-officer >=0.6.0
+    - r-ragg
     - r-rlang
     - r-rmarkdown
     - r-uuid >=0.1_4
@@ -56,8 +56,10 @@ test:
 
 about:
   home: https://davidgohel.github.io/flextable
+  dev_url: https://github.com/davidgohel/flextable
+  doc_url: https://ardata-fr.github.io/flextable-book/
   license: GPL-3.0-only
-  summary: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
+  summary: "Use a grammar for creating and customizing pretty tables. The following formats are supported: 'HTML', 'PDF', 'RTF', 'Microsoft Word', 'Microsoft PowerPoint' and R 'Grid Graphics'. 'R Markdown', 'Quarto' and the package 'officer' can be used to produce the result files. The syntax is the same for the user regardless of the type of output to be produced. A set of functions allows the creation, definition of cell arrangement, addition of headers or footers, formatting and definition of cell content with text and or images. The package also offers a set of high-level functions that allow tabular reporting of statistical models and the creation of complex cross tabulations."
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
@@ -65,25 +67,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: flextable
-# Type: Package
-# Title: Functions for Tabular Reporting
-# Version: 0.5.5
-# Authors@R: c( person("David", "Gohel", role = c("aut", "cre"), email = "david.gohel@ardata.fr"), person("Quentin", "Fazilleau", role = c("ctb"), email = "quentin.fazilleau@ardata.fr"), person("Maxim", "Nazarov", role = c("ctb"), comment = "rmarkdown for docx output"), person(given = "Titouan", family = "Robert", role = c("ctb")) )
-# Description: Create pretty tables for 'HTML', 'Microsoft Word' and 'Microsoft PowerPoint' documents.  Functions are provided to let users create tables, modify and format their content.  It extends package 'officer' that does not contain any feature for customized tabular reporting  and can be used within R markdown documents.
-# License: GPL-3
-# LazyData: TRUE
-# Imports: stats, utils, grDevices, graphics, officer (>= 0.2.0), rmarkdown, knitr, htmltools, xml2, data.table, gdtools (>= 0.1.6), rlang, base64enc
-# RoxygenNote: 6.1.1
-# Suggests: testthat, xtable, magrittr, webshot, magick, ggplot2
-# Encoding: UTF-8
-# URL: https://davidgohel.github.io/flextable
-# BugReports: https://github.com/davidgohel/flextable/issues
-# VignetteBuilder: knitr
-# NeedsCompilation: no
-# Packaged: 2019-06-25 08:46:29 UTC; davidgohel
-# Author: David Gohel [aut, cre], Quentin Fazilleau [ctb], Maxim Nazarov [ctb] (rmarkdown for docx output), Titouan Robert [ctb]
-# Maintainer: David Gohel <david.gohel@ardata.fr>
-# Repository: CRAN
-# Date/Publication: 2019-06-25 09:20:03 UTC
