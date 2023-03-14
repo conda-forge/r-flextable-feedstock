@@ -1,4 +1,4 @@
-{% set version = "0.8.6" %}
+{% set version = "0.9.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
-  sha256: 1872f4a27a0cf7b2bf04a2228ec6bbcfac50af4c3616d653b8b6c68df91d2836
+  sha256: 2e045c68f9d784072166da566aac74122fdba6d425f5730565de48350ecfbf5c
 
 build:
   merge_build_host: true  # [win]
@@ -59,7 +59,9 @@ about:
   dev_url: https://github.com/davidgohel/flextable
   doc_url: https://ardata-fr.github.io/flextable-book/
   license: GPL-3.0-only
-  summary: "Use a grammar for creating and customizing pretty tables. The following formats are supported: 'HTML', 'PDF', 'RTF', 'Microsoft Word', 'Microsoft PowerPoint' and R 'Grid Graphics'. 'R Markdown', 'Quarto' and the package 'officer' can be used to produce the result files. The syntax is the same for the user regardless of the type of output to be produced. A set of functions allows the creation, definition of cell arrangement, addition of headers or footers, formatting and definition of cell content with text and or images. The package also offers a set of high-level functions that allow tabular reporting of statistical models and the creation of complex cross tabulations."
+  summary: "Use a grammar for creating and customizing pretty tables. The following formats are supported: 'HTML', 'PDF', 'RTF', 'Microsoft Word', 'Microsoft PowerPoint' and R 'Grid Graphics'. 'R Markdown', 'Quarto' and the package 'officer' can be used to produce the result files. The syntax is the same for the user regardless\
+    \ of the type of output to be produced. A set of functions allows the creation, definition of cell arrangement, addition of headers or footers, formatting and definition of cell content with text and or images. The package also offers a set of high-level functions that allow tabular reporting of statistical models and\
+    \ the creation of complex cross tabulations."
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
