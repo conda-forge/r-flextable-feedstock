@@ -1,4 +1,4 @@
-{% set version = "0.9.8" %}
+{% set version = "0.9.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/flextable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/flextable/flextable_{{ version }}.tar.gz
-  sha256: 9672e14f108c087383c01981f7f36a63a68dcf6ab72630a603fca427cf51735f
+  sha256: d89fd3fdd3b0cac4d8b878a5c1c6d276e76e0f5eadac0db8a95497c5d88220af
 
 build:
   number: 0
